@@ -1,0 +1,21 @@
+div {
+    background-color: pink;
+    border: solid 2px black;
+}
+
+body{
+    width: 420px;
+    margin: 0 auto;
+}
+
+.alimentos > div {
+    display: flex;
+    overflow-y:hidden;
+}
+
+img {
+    width: 144px;
+    height: 87px;
+    object-fit: cover;
+    border-radius: 9px;
+}
