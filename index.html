@@ -10,94 +10,99 @@
     <title>DrivenEats | Projeto 03</title>
 </head>
 <body>
-    <div class="topo">
-        <p>DrivenEats</p>
-        <p>Sua comida em 6 minutos</p>
-    </div>
-    <div class="alimentos">
-        <div class="linha">
-            <p>Primeiro, seu prato</p>
-            <div>
-                <div class="prato">
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="topo">
+            <h1>DrivenEats</h1>
+            <p>Sua comida em 6 minutos</p>
         </div>
-        <div class="linha">
-            <p>Agora, sua bebida</p>
-            <div>
-                <div class="bebida">
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
+        <div class="alimentos">
+           <div class="linha">
+                <h2>Primeiro, seu prato</h2>
+                    <div class="prato">
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/carne.jpg" alt="imagem">
+                            <div class="nome">Carne ao limão</div>
+                            <div class="descricao">Carne com molho de limão</div>
+                            <div class="preco">R$ 20,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/frango.jpg" alt="imagem">
+                            <div class="nome">Frango alimonado</div>
+                            <div class="descricao">Frango com pasta de limão</div>
+                            <div class="preco">R$ 14,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/peixe.jpg" alt="imagem">
+                            <div class="nome">Peixe com Limão</div>
+                            <div class="descricao">Pescado com lascas de limão</div>
+                            <div class="preco">R$ 17,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                </div>
             </div>
+            <div class="linha">
+                <h2>Agora, sua bebida</h2>
+                    <div class="bebida">
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/limonada.jpg" alt="imagem">
+                            <div class="nome">Limonada</div>
+                            <div class="descricao">Copo 500ml</div>
+                            <div class="preco">R$ 5,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/suco.jpg" alt="imagem">
+                            <div class="nome">Suco de limão</div>
+                            <div class="descricao">Copo 0,5L</div>
+                            <div class="preco">R$ 6,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/soda.png" alt="imagem">
+                            <div class="nome">Refrigerante de limão</div>
+                            <div class="descricao">Lata 350ml</div>
+                            <div class="preco">R$ 4,90</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+            </div>
+            <div class="linha">
+                <h2>Por fim, sua sobremesa</h2>
+                    <div class="sobremesa">
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/mousse.jpg" alt="imagem">
+                            <div class="nome">Mousse</div>
+                            <div class="descricao">Sabor limão</div>
+                            <div class="preco">R$ 5,00</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/sorvete.jpg" alt="imagem">
+                            <div class="nome">Sorvete</div>
+                            <div class="descricao">Sabor mousse de limão</div>
+                            <div class="preco">R$ 5,80</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="item" onclick="toggleItem()">
+                            <img src="./img/limao.jpg" alt="imagem">
+                            <div class="nome">Salada de frutas</div>
+                            <div class="descricao">Mix de limões</div>
+                            <div class="preco">R$ 8,75</div>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>    
+            </div>  
         </div>
-        <div class="linha">
-            <p>Por fim, sua sobremesa</p>
-            <div>
-                <div class="sobremesa">
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                    <div class="item">
-                        <img src="./img/carne.jpg" alt="imagem">
-                        <div class="nome">Nome</div>
-                        <div class="descricao">Descricao</div>
-                        <div class="preco">Preco</div>
-                    </div>
-                </div>
-            </div>
-           
-        </div>  
-    </div>
-    <div class="barra-inferior">
-        <button class="botao-pedido">
-            <p>Selecione os 3 itens
-            para fechar o pedido</p>
-        </button>
+        <div class="barra-inferior">
+            <button class="botao-pedido status" onclick="eventoBotao()">
+                <p>Selecione os 3 itens
+                para fechar o pedido</p>
+            </button>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>
