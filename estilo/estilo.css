@@ -3,19 +3,63 @@ div {
     border: solid 2px black;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body{
     width: 420px;
     margin: 0 auto;
 }
 
-.alimentos > div {
+.topo{
+    position: sticky;
+    top:0;
+    height: 92px;
+
+}
+
+.linha{
+    margin:30px 10px;
+    
+}
+.prato, .bebida, .sobremesa {
     display: flex;
-    overflow-y:hidden;
+    width: calc(144px*4);
+}
+
+.linha > div {
+    overflow-y: hidden;
+}
+
+.item{
+    height: 172px;
+    width: 216px;
+    margin: 0 10px 0 0;
+    border-radius: 9px;
+
 }
 
 img {
     width: 144px;
     height: 87px;
-    object-fit: cover;
+    object-fit:none;
     border-radius: 9px;
+}
+
+.barra-inferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92px;
+    
+    position: sticky;
+    bottom:0;
+}
+.botao-pedido{
+    border-radius: 50px;
+    width: 364px;
+    height: 61px;
+    font-size: 20px;
+    background-color: red;
 }
