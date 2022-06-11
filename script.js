@@ -52,16 +52,16 @@ function verificar(){
     sobremesa=sobremesa.innerText;
 
     precoP=document.querySelector(".prato .selecionado .preco").innerText;
-    precoP=Number(precoP.substring(3).replace(",","."));
+    precoP=Number(precoP.substring(2).replace(",","."));
     console.log(precoP)
 
     precoB=document.querySelector(".bebida .selecionado .preco").innerText;
-    precoB=Number(precoB.substring(3).replace(",","."));
+    precoB=Number(precoB.substring(2).replace(",","."));
     console.log(precoB)
 
 
     precoS=document.querySelector(".sobremesa .selecionado .preco").innerText;
-    precoS=Number(precoS.substring(3).replace(",","."));
+    precoS=Number(precoS.substring(2).replace(",","."));
     console.log(precoS)
 
     precoTotal=precoP+precoB+precoS;
@@ -85,25 +85,91 @@ function verificar(){
     }
 }
 
+let infoCliente = [];
+
 function completarPedido(){
 
     const telaConfirmacao = document.querySelector(".tela-confirmacao");
     const telaPedido = document.querySelector(".container");
     telaConfirmacao.classList.add("oculto");
     const completo = document.querySelector(".botao-pedido").classList.contains("completo");
-    
+
     console.log(completo+" "+verificar());
 
     if(completo){
 
+        const informacoes = verificar();
+        const prato = informacoes[0];
+        const precoP = informacoes[1]
+        const bebida = informacoes[2];
+        const precoB = informacoes[3];
+        const sobremesa = informacoes[4];
+        const precoS = informacoes[5];
+        const precoTotal = informacoes[6];
+
+        let confPrato = document.querySelector(".prato-final span:first-child");
+        let confPrecoP = document.querySelector(".prato-final span:last-child");
+        let confBebida = document.querySelector(".bebida-final span:first-child");
+        let confPrecoB = document.querySelector(".bebida-final span:last-child");
+        let confSobremesa = document.querySelector(".sobremesa-final span:first-child");
+        let confPrecoS = document.querySelector(".sobremesa-final span:last-child");
+        let confTotal = document.querySelector(".total-final span:last-child");
+
+        confPrato.innerText = prato;
+        confPrecoP.innerText = precoP;
+        confBebida.innerText = bebida;
+        confPrecoB.innerText = precoB;
+        confSobremesa.innerText = sobremesa;
+        confPrecoS.innerText = precoS;
+
+        confTotal.innerText = `R$ ${precoTotal}`;
+
+        const nome = prompt("Seu nome:\n");
+        const endereco = prompt("Endereço de entrega:\n");
+        infoCliente.push(nome);
+        infoCliente.push(endereco);
+
         telaConfirmacao.classList.remove("oculto");
         telaPedido.classList.add("transparencia");
         document.querySelector("body").classList.add("no-scroll");
-        
+
     }
     //alert(`Pedido\nPrato: ${prato}\nBebida: ${bebida}\nSobremesa: ${sobremesa}\nPreço total: R$ ${precoTotal}`);
-    
 }
+
+function msgPedido(){
+    const informacoes = verificar();
+    const prato = informacoes[0];
+    const bebida = informacoes[2];
+    const sobremesa = informacoes[4];
+    const precoTotal = informacoes[6];
+
+    const nome = infoCliente[0];
+    const endereco = infoCliente[1];
+    
+    let msg=`Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${precoTotal}\n\nNome: ${nome}\nEndereço: ${endereco}`;
+    msg=encodeURIComponent(msg);
+    msg="https://wa.me/?text="+msg;
+
+    console.log(msg);
+
+    const link = document.querySelector(".enviar-msg");
+    link.href=msg;
+
+    voltarMenu();
+}
+
+function voltarMenu(){
+
+    const telaConfirmacao = document.querySelector(".tela-confirmacao");
+    const telaPedido = document.querySelector(".container");
+    infoCliente = [];
+
+    telaConfirmacao.classList.add("oculto");
+    telaPedido.classList.remove("transparencia");
+    document.querySelector("body").classList.remove("no-scroll");
+}
+
   
 function desconverterPreco(preco){
 
