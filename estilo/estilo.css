@@ -9,7 +9,11 @@ body{
     background-color: #E5E5E5;
 }
 .container{
-    width: 420px;
+    /* width: 420px; */
+    width: 100vw;
+    min-width: 250px;
+    min-height: 100vh;
+
     margin: 0 auto;
     background-color: #EEE;
 }
@@ -44,13 +48,13 @@ h1, h2{
 }
 
 .linha{
-    margin:30px 0;
+    margin: 30px 0 0;
     
 }
 
 .linha > div{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     overflow-y: hidden;
     padding: 20px;
     /* background-color: red; */
@@ -58,16 +62,18 @@ h1, h2{
 .linha h2{
     padding: 0 20px;
 }
-.linha > div > div:last-child{
+.item:last-child{
     /* background-color: cyan; */
-    margin:0;
+    margin: 0;
+    
 }
 
 .item{
     width: 172px;
     height: 216px;
     border-radius: 9px;
-    padding: 12px;
+    padding: 5px;
+    border: solid 9px transparent;
     margin: 0 20px 0 0;
     background-color: white;
     box-shadow: 0 0 10px gray;
@@ -76,6 +82,12 @@ h1, h2{
     flex-direction: column;
     justify-content: space-around;
     position: relative;
+    transition: color ;
+}
+
+.selecionado{
+    
+    border-color: #32B72F;
 }
 
 img {
@@ -113,7 +125,7 @@ img {
     z-index: 1;
     bottom:0;
 }
-.botao-pedido.incompleto{
+.botao-pedido{
     border-radius: 50px;
     width: 364px;
     height: 61px;
@@ -126,21 +138,15 @@ img {
     color: white;
 }
 
-/* ESTILOS DINAMICOS*/
-
-ion-icon{
+ ion-icon{
     display: none;
     color:#32B72F;
     position: absolute;
-    bottom:20px;
-    right: 20px;
+    bottom: 10px;
+    right: 5px;
+    font-size: 19px;
 }
 
-.item.selecionado {
-    border: solid 5px #32B72F;
-}
-
-.botao-pedido.completo{
-    background-color: #32B72F;
-    color: white;
+.selecionado ion-icon{
+    display: initial;
 }
