@@ -82,7 +82,7 @@ h1, h2{
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    transition: color ;
+    transition: border 0.2s, brightness 1s;
 }
 
 .selecionado{
@@ -136,7 +136,11 @@ img {
 
     background-color: #CBCBCB;
     color: white;
+
+    transition: 0.1s, background-color 0.3s ease-in-out, brightness 0.2s, box-shadow 0.2s;
+    
 }
+
 .completo{
     background-color: #32B72F;
     font-weight: bold;
@@ -215,6 +219,8 @@ img {
     color: #50D074;
     font-weight: bold;
     margin: 10px 0 0;
+    transition: box-shadow 0.2s;
+
 }
 .confirmacao .cancelar{
     width: 50%;
@@ -231,9 +237,19 @@ img {
 
 .transparencia {
     opacity: .1;
+    transition: 0.5s
+
 }
 
 .no-scroll {
     overflow: hidden;
+}
+
+button:active, .item:active, .cancelar:active {
+  filter: brightness(0.9);
+}
+
+button:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
