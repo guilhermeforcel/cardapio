@@ -165,6 +165,17 @@ function voltarMenu(){
     const telaPedido = document.querySelector(".container");
     infoCliente = [];
 
+    const pratoSelecionado = document.querySelector(`.prato .selecionado`);
+    const bebidaSelecionado = document.querySelector(`.bebida .selecionado`);
+    const sobremesaSelecionado = document.querySelector(`.sobremesa .selecionado`);
+    // const botaoPedido = document.querySelector(".botao-pedido");
+    
+    pratoSelecionado.classList.remove("selecionado");
+    bebidaSelecionado.classList.remove("selecionado");
+    sobremesaSelecionado.classList.remove("selecionado");
+    // botaoPedido.classList.remove("completo");
+    verificar();
+
     telaConfirmacao.classList.add("oculto");
     telaPedido.classList.remove("transparencia");
     document.querySelector("body").classList.remove("no-scroll");
